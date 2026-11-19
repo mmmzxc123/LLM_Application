@@ -29,7 +29,7 @@ function App() {
       const data = await response.json()
       const answer = data.answer
       setMessages((current) => [
-        ...current, { role: "assistant", text: data.answer, source: data.sources ?? [],
+        ...current, { role: "assistant", text: data.answer, sources: data.sources ?? [] },
       ])
 
     } catch (error) {
