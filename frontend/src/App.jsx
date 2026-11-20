@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import DocumentSources from './DocumentSources'
 
 const firstMessage = {
   role: 'assistant',
-  text: '안녕하세요. git_기초.txt 내용을 바탕으로 질문에 답하는 챗봇입니다.',
+  text: '안녕하세요. 업로드 된 자료를 바탕으로 질문에 답하는 챗봇입니다.',
 }
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
         <h1>나의 문서 질문 챗봇</h1>
         <p>수업 자료에 대해 궁금한 점을 입력해 보세요.</p>
       </header>
+
+      <DocumentSources />
 
       <section className="chat" aria-label="대화 내용">
         {messages.map((message, index) => (

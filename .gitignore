@@ -5,3 +5,4 @@ output/
 .vscode/
 sqlite_lab/*.db 
 data_type.py
+sample_uploads/

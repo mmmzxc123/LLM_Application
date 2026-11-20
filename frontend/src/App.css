@@ -10,6 +10,7 @@
 body { margin: 0; }
 
 .app {
+  grid-template-columns: 270px minmax(0, 1fr);
   width: min(860px, calc(100% - 32px));
   min-height: 100vh;
   margin: 0 auto;
