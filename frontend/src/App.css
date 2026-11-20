@@ -167,3 +167,17 @@ button:disabled { opacity: .5; cursor: default; }
 }
 .auth-actions { display: flex; gap: 0.8rem; }
 .auth-actions button { flex: 1; min-height: 42px; }
+
+/* 로그아웃 버튼*/
+.header-top{
+  display: flex;
+  justify-content: space-between;
+  allgin-items: flex-start;
+  gap: 12px;
+}
+
+.logout-button {
+  flex-shrink: 0;
+  min-height: 40px;
+  padding: 0 16px;
+}
