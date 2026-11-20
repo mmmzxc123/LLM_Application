@@ -143,15 +143,15 @@ function App() {
     <main className={approved ? 'app' : 'app auth-page'}>
       <header className="header">
         <div className="header-top">
-        <span className="eyebrow">KION LABS · LLM 애플리케이션 개발</span>
-        {session && (
-          <button type="button" className="logout-button" onClick={signOut}>
-            로그아웃
-          </button>
-        )}
+          <span className="eyebrow">KION LABS · LLM 애플리케이션 개발</span>
+          {session && (
+            <button type="button" className="logout-button" onClick={signOut}>
+              로그아웃
+            </button>
+          )}
+        </div>
         <h1>나의 문서 질문 챗봇</h1>
         <p>로그인한 사용자의 문서와 대화를 저장합니다.</p>
-        
         <p role="status">{notice}</p>
       </header>
 
