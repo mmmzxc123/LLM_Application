@@ -94,6 +94,7 @@ function App() {
   }
 
   async function signIn() {
+    setNotice('')
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) setNotice(error.message)
   }
