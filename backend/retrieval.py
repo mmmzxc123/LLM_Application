@@ -29,8 +29,9 @@ def find_chunks(question, documents):
         content_words = make_words(chunk["text"])
         for word in question_words:
             if len(word) > 1 and word in content_words:
-                found.append(chunk)
-                break
-        if len(found) == 3:
-            break
-    return found
+                score += 2
+            if word in filename_words:
+                score += 3
+            if score > 0:
+                scored.append({"score": socre, "chunk": chunk})
+
