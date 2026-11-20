@@ -52,8 +52,12 @@ def upload_document(file: UploadFile):
 
 
 @app.post("/api/chat")
-def chat(request: ChatRequest):
-    chunks = find_chunks(request.question)
+def chat(request: ChatRequest,
+         authorization: str = Header(default="")):
+    token, user_id = require_approved(authorization)
+    documents = all_document_texts(token)
+    chunks = find_chunks(request.question, documents)
+
     if not chunks:
         return {"answer": "자료에서 관련 내용을 찾지 못했습니다.", "sources": []}
 
