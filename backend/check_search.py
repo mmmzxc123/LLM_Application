@@ -1,10 +1,11 @@
+from document_store import all_document_texts
 from retrieval import find_chunks
 
 while True:
     question = input("질문 입력 (끝내려면 '종료'): ")
     if question == "종료":
         break
-    matches = find_chunks(question)
+    matches = find_chunks(question, all_document_texts())
     print("찾은 문단 수:", len(matches))
     
     # 검색 결과가 없을 때

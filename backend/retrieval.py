@@ -1,11 +1,9 @@
-"""SQLite의 문서를 문단으로 나누고 질문과 겹치는 단어를 찾습니다."""
-
-from document_store import all_document_texts
+"""문서를 문단으로 나누고 질문과 겹치는 단어가 있는 문단을 찾습니다."""
 
 
-def load_chunks():
+def load_chunks(documents):
     chunks = []
-    for document in all_document_texts():
+    for document in documents:
         # TXT 한 개의 내용을 빈 줄 기준으로 나눕니다.
         for paragraph in document["content"].split("\n\n"):
             paragraph = paragraph.strip()
@@ -23,11 +21,11 @@ def make_words(text):
     return cleaned.split()
 
 
-def find_chunks(question):
+def find_chunks(question, documents):
     question_words = make_words(question)
     found = []
 
-    for chunk in load_chunks():
+    for chunk in load_chunks(documents):
         content_words = make_words(chunk["text"])
         for word in question_words:
             if len(word) > 1 and word in content_words:

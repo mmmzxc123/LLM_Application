@@ -1,6 +1,7 @@
+from document_store import all_document_texts
 from retrieval import load_chunks
 
-chunks = load_chunks()
+chunks = load_chunks(all_document_texts())
 print("문단 수:", len(chunks))
 
 for chunk in chunks[:3]:
