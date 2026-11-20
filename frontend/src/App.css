@@ -141,3 +141,29 @@ button:disabled { opacity: .5; cursor: default; }
   .chat { grid-column: 1; grid-row: 3; }
   .composer { grid-column: 1; grid-row: 4; }
 }
+/* 로그인·승인 대기 화면은 내용 높이만 사용 */
+.app.auth-page {
+  min-height: 0;
+  grid-template-rows: auto auto;
+  align-content: start;
+}
+
+.auth-panel {
+  width: min(560px, 100%);
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border: 1px solid #c6d7e1;
+  border-radius: 16px;
+}
+.auth-panel h2 { margin: 0 0 1rem; }
+.auth-panel input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.35rem 0 0.75rem;
+  border: 1px solid #a8bfce;
+  border-radius: 8px;
+  font: inherit;
+}
+.auth-actions { display: flex; gap: 0.8rem; }
+.auth-actions button { flex: 1; min-height: 42px; }
